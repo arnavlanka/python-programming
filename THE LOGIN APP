@@ -1,0 +1,49 @@
+
+from tkinter import *
+
+root = Tk()
+root.title("login app")
+root.geometry("500x500")
+
+frame = Frame(master=root, height=200, width=360, bg="#18B92B")
+
+
+lbl1 = Label(frame, text = "First Name", bg="#d338cb", fg="white", width=12)
+lbl2 = Label(frame, text = "Last Name", bg="#eb772a", fg="white", width=12)
+lbl3 = Label(frame, text = "Gender", bg="#776fde", fg="white", width=12)
+lbl4 = Label(frame, text = "Password", bg="#ef2525", fg="white", width=12)
+lbl5 = Label(frame, text = "Email Id", bg="#c7de35", fg="white", width=12)
+
+name_entry = Entry(frame)
+last_name = Entry(frame)
+gender_entry = Entry(frame)
+password_entry = Entry(frame)
+email_id = Entry(frame)
+
+def display():
+    name = name_entry.get()
+    greet = "hey "+name
+    message = "\nCongratulations for your new account !!!!!"
+    textbox.insert(END, greet)
+    textbox.insert(END, message)
+
+textbox = Text(bg="#c91d76", fg="black")
+
+btn = Button(text = "Create Account", command=display, bg="red")
+
+frame.place(x=20,y=0)
+lbl1.place(x=20,y=20)
+lbl2.place(x=20,y=40)
+lbl3.place(x=20,y=60)
+lbl4.place(x=20,y=80)
+lbl5.place(x=20,y=100)
+name_entry.place(x=150,y=20)
+last_name.place(x=150,y=40)
+gender_entry.place(x=150,y=60)
+password_entry.place(x=150,y=80)
+email_id.place(x=150,y=100)
+btn.place(x=150,y=270)
+textbox.place(y=300)
+
+
+root.mainloop()
